@@ -19,3 +19,10 @@ const zTetromino = [
   [0, width, width + 1, width * 2 + 1],
   [width + 1, width + 2, width * 2, width * 2 + 1],
 ];
+
+const tTetromino = [
+  [1, width, width + 1, width + 2],
+  [1, width + 1, width + 2, width * 2 + 1],
+  [width, width + 1, width + 2, width * 2 + 1],
+  [1, width, width + 1, width * 2 + 1],
+];
