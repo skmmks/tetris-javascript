@@ -40,3 +40,10 @@ const iTetromino = [
   [1, width + 1, width * 2 + 1, width * 3 + 1],
   [width, width + 1, width + 2, width + 3],
 ];
+
+const tetrisPieces = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
+
+let currentPosition = 4;
+let current = tetrisPieces[0];
+
+console.log(tetrisPieces);
