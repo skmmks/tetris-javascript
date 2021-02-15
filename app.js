@@ -45,5 +45,3 @@ const tetrisPieces = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino
 
 let currentPosition = 4;
 let current = tetrisPieces[0];
-
-console.log(tetrisPieces);
