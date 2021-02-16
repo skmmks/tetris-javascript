@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const startBtn = document.querySelector('#start-button');
   const width = 10;
 
+  let timerId = setInterval(moveDown, 1000);
+
   const lTetromino = [
     [1, width + 1, width * 2 + 1, 2],
     [width, width + 1, width + 2, width * 2 + 2],
@@ -56,7 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const erasePiece = () => {
     current.forEach((index) => {
-      square[currentPosition + index].classList.remove('tetromino');
+      squares[currentPosition + index].classList.remove('tetromino');
     });
   };
+
+  function moveDown() {
+    erasePiece();
+    currentPosition += width;
+    drawPiece();
+  }
 });
