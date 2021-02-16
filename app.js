@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const width = 10;
 
   const lTetromino = [
-    [1, width + 1, width + 2, width * 2 + 2],
+    [1, width + 1, width * 2 + 1, 2],
     [width, width + 1, width + 2, width * 2 + 2],
     [1, width + 1, width * 2 + 1, width * 2],
     [width, width * 2, width * 2 + 1, width * 2 + 2],
@@ -43,5 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const tetrisPieces = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
 
   let currentPosition = 4;
-  let current = tetrisPieces[0];
+  let current = tetrisPieces[0][0];
+
+  function draw() {
+    current.forEach((index) => {
+      squares[currentPosition + index].classList.add('tetromino');
+    });
+  }
+
+  draw();
 });
