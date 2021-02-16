@@ -42,8 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const tetrisPieces = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino];
 
+  let randomPiece = Math.floor(Math.random() * tetrisPieces.length);
+
   let currentPosition = 4;
-  let current = tetrisPieces[0][0];
+  let currentRotation = 0;
+  let current = tetrisPieces[randomPiece][currentRotation];
 
   function draw() {
     current.forEach((index) => {
