@@ -48,11 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentRotation = 0;
   let current = tetrisPieces[randomPiece][currentRotation];
 
-  function draw() {
+  const drawPiece = () => {
     current.forEach((index) => {
       squares[currentPosition + index].classList.add('tetromino');
     });
-  }
+  };
 
-  draw();
+  const erasePiece = () => {
+    current.forEach((index) => {
+      square[currentPosition + index].classList.remove('tetromino');
+    });
+  };
 });
