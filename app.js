@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreDisplay = document.querySelector('#score');
   const startBtn = document.querySelector('#start-button');
   const width = 10;
-
-  let timerId = setInterval(moveDown, 1000);
+  let timerId;
 
   const lTetromino = [
     [1, width + 1, width * 2 + 1, 2],
@@ -62,9 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  function moveDown() {
+  const moveDown = () => {
     erasePiece();
     currentPosition += width;
     drawPiece();
-  }
+  };
+
+  timerId = setInterval(moveDown, 1000);
 });
