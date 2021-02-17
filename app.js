@@ -68,4 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   timerId = setInterval(moveDown, 1000);
+
+  const freeze = () => {
+    if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
+      current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
+    }
+  };
+  freeze();
 });
