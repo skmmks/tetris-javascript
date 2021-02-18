@@ -79,5 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
       drawPiece();
     }
   };
-  freeze();
+
+  const moveLeft = () => {
+    erasePiece();
+    const leftEdge = current.some((index) => (currentPosition + index) % width === 0);
+  };
 });
