@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     erasePiece();
     currentPosition += width;
     drawPiece();
+    freeze();
   };
 
   timerId = setInterval(moveDown, 1000);
@@ -72,6 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const freeze = () => {
     if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
       current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
+      randomPiece = Math.floor(Math.random() * tetrisPieces.length);
+      current = tetrisPieces[randomPiece][currentRotation];
+      currentPosition = 4;
+      drawPiece();
     }
   };
   freeze();
