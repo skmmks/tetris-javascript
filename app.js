@@ -83,5 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const moveLeft = () => {
     erasePiece();
     const leftEdge = current.some((index) => (currentPosition + index) % width === 0);
+
+    if (leftEdge) currentPosition -= 1;
   };
 });
