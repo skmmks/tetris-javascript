@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  function control(e) {
+    if (e.keyCode === 37) {
+      moveLeft();
+    }
+  }
+
+  document.addEventListener('keyup', control);
+
   const moveDown = () => {
     erasePiece();
     currentPosition += width;
@@ -84,10 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
     erasePiece();
     const leftEdge = current.some((index) => (currentPosition + index) % width === 0);
 
-    if (leftEdge) currentPosition -= 1;
-
+    if (!leftEdge) currentPosition -= 1;
     if (current.some((index) => squares[currentPosition + index].classList.contains('taken'))) {
       currentPosition += 1;
     }
+    drawPiece();
   };
 });
