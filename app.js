@@ -61,11 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  function control(e) {
-    if (e.keyCode === 37) {
-      moveLeft();
+  const control = (e) => {
+    switch (e.keyCode) {
+      case 37:
+        moveLeft();
+        break;
     }
-  }
+  };
 
   document.addEventListener('keyup', control);
 
