@@ -66,6 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
       case 37:
         moveLeft();
         break;
+      case 38: 
+        //rotatePiece
+        console.log(e.keyCode);
+        break;
+      case 39:
+        //moveRight
+        console.log(e.keyCode);
+        break;
     }
   };
 
