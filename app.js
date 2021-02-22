@@ -66,12 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
       case 37:
         moveLeft();
         break;
-      case 38: 
+      case 38:
         //rotatePiece
         console.log(e.keyCode);
         break;
       case 39:
-        //moveRight
+        moveRight();
         console.log(e.keyCode);
         break;
     }
@@ -105,6 +105,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!leftEdge) currentPosition -= 1;
     if (current.some((index) => squares[currentPosition + index].classList.contains('taken'))) {
       currentPosition += 1;
+    }
+    drawPiece();
+  };
+
+  const moveRight = () => {
+    erasePiece();
+    const rightEdge = current.some((index) => (currentPosition + index) % width === width - 1);
+
+    if (!rightEdge) currentPosition += 1;
+    if (current.some((index) => squares[currentPosition + index].classList.contains('taken'))) {
+      currentPosition - +1;
     }
     drawPiece();
   };
