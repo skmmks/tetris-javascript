@@ -125,5 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentRotation === current.length) {
       currentRotation = 0;
     }
+    current = tetrisPieces[randomPiece][currentRotation];
+    drawPiece();
   };
 });
