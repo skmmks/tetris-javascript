@@ -121,5 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const rotate = () => {
     erasePiece();
     currentRotation++;
+
+    if (currentRotation === current.length) {
+      currentRotation = 0;
+    }
   };
 });
