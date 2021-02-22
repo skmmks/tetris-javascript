@@ -67,12 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
         moveLeft();
         break;
       case 38:
-        //rotatePiece
-        console.log(e.keyCode);
+        rotate();
         break;
       case 39:
         moveRight();
-        console.log(e.keyCode);
         break;
     }
   };
@@ -118,5 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
       currentPosition - +1;
     }
     drawPiece();
+  };
+
+  const rotate = () => {
+    erasePiece();
+    currentRotation++;
   };
 });
