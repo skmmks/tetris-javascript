@@ -128,4 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
     current = tetrisPieces[randomPiece][currentRotation];
     drawPiece();
   };
+
+  const displaySquares = document.querySelectorAll('.mini-grid div');
+  const displayWidth = 4;
+  let displayIndex = 0;
 });
