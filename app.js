@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreDisplay = document.querySelector('#score');
   const startBtn = document.querySelector('#start-button');
   const width = 10;
+  let nextRandom = 0;
   let timerId;
 
   const lTetromino = [
@@ -89,10 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const freeze = () => {
     if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
       current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
+      randomPiece = nextRandom;
       randomPiece = Math.floor(Math.random() * tetrisPieces.length);
       current = tetrisPieces[randomPiece][currentRotation];
       currentPosition = 4;
       drawPiece();
+      displayPiece();
     }
   };
 
@@ -145,5 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
     displaySquares.forEach((square) => {
       square.classList.remove('tetromino');
     });
+    upNextPiece[nextRandom];
   };
 });
