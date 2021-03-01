@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
       current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
       randomPiece = nextRandom;
-      randomPiece = Math.floor(Math.random() * tetrisPieces.length);
+      nextRandom = Math.floor(Math.random() * tetrisPieces.length);
       current = tetrisPieces[randomPiece][currentRotation];
       currentPosition = 4;
       drawPiece();
@@ -148,6 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
     displaySquares.forEach((square) => {
       square.classList.remove('tetromino');
     });
-    upNextPiece[nextRandom];
+    upNextPiece[nextRandom].forEach((index) => {
+      displaySquares[displayIndex + index].classList.add('tetromino');
+    });
   };
 });
