@@ -140,4 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
     [0, 1, displayWidth, displayWidth + 1],
     [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1],
   ];
+
+  const displayPiece = () => {
+    displaySquares.forEach((square) => {
+      square.classList.remove('tetromino');
+    });
+  };
 });
