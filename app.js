@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     freeze();
   };
 
-  timerId = setInterval(moveDown, 1000);
+  timerId = setInterval(moveDown, 50);
 
   const freeze = () => {
     if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const displaySquares = document.querySelectorAll('.mini-grid div');
   const displayWidth = 4;
-  let displayIndex = 0;
+  const displayIndex = 0;
 
   const upNextPiece = [
     [1, displayWidth + 1, displayWidth * 2 + 1, 2],
