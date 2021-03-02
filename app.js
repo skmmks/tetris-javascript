@@ -152,4 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
       displaySquares[displayIndex + index].classList.add('tetromino');
     });
   };
+
+  startBtn.addEventListener('click', () => {
+    if (timerId) {
+      clearInterval(timerId);
+      timerId = null;
+    } else {
+      drawPiece();
+      timerId = setInterval(moveDown, 1000);
+    }
+  });
 });
