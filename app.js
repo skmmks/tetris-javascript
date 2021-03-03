@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       drawPiece();
       timerId = setInterval(moveDown, 1000);
+      nextRandom = Math.floor(Math.random() * tetrisPieces.length);
+      displayPiece();
     }
   });
 });
