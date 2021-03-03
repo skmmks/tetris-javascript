@@ -169,11 +169,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const addScore = () => {
     for (let i = 0; i < 199; i += width) {
       const row = [i, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
-    }
 
-    if (row.every((index) => squares[index].classList.contains('taken'))) {
-      score += 10;
-      scoreDisplay.innerHTML = score;
+      if (row.every((index) => squares[index].classList.contains('taken'))) {
+        score += 10;
+        scoreDisplay.innerHTML = score;
+        row.forEach((index) => {
+          square[index].classList.remove('taken');
+        });
+        const removedSquares = squares.splice(i, width);
+      }
     }
   };
 });
