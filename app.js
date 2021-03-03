@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     freeze();
   };
 
-  timerId = setInterval(moveDown, 50);
+  // timerId = setInterval(moveDown, 50);
 
   const freeze = () => {
     if (current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))) {
@@ -164,4 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
       displayPiece();
     }
   });
+
+  const addScore = () => {
+    for (let i = 0; i < 199; i += width) {
+      const row = [i, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
+    }
+  };
 });
