@@ -74,6 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
       case 39:
         moveRight();
         break;
+      case 40:
+        moveDown();
+        break;
     }
   };
 
@@ -177,7 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
         row.forEach((index) => {
           square[index].classList.remove('taken');
         });
+
         const removedSquares = squares.splice(i, width);
+
         squares = removedSquares.concat(squares);
         squares.forEach((cell) => grid.appendChild(cell));
       }
