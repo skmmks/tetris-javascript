@@ -179,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreDisplay.innerHTML = score;
         row.forEach((index) => {
           squares[index].classList.remove('taken');
+          squares[index].classList.remove('tetrimino');
         });
 
         const removedSquares = squares.splice(i, width);
