@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       currentPosition = 4;
       drawPiece();
       displayPiece();
+      addScore();
     }
   };
 
@@ -177,6 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
           square[index].classList.remove('taken');
         });
         const removedSquares = squares.splice(i, width);
+        squares = removedSquares.concat(squares);
+        squares.forEach((cell) => grid.appendChild(cell));
       }
     }
   };
