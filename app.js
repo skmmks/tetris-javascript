@@ -56,12 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawPiece = () => {
     current.forEach((index) => {
       squares[currentPosition + index].classList.add('tetromino');
+      squares[currentPosition + index].style.backgroundColor = colors[randomPiece];
     });
   };
 
   const erasePiece = () => {
     current.forEach((index) => {
       squares[currentPosition + index].classList.remove('tetromino');
+      squares[currentPosition + index].style.backgroundColor = '';
     });
   };
 
