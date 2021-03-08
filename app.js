@@ -157,9 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const displayPiece = () => {
     displaySquares.forEach((square) => {
       square.classList.remove('tetromino');
+      square.style.backgroundColor = '';
     });
     upNextPiece[nextRandom].forEach((index) => {
       displaySquares[displayIndex + index].classList.add('tetromino');
+      displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom];
     });
   };
 
@@ -185,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         row.forEach((index) => {
           squares[index].classList.remove('taken');
           squares[index].classList.remove('tetrimino');
+          squares[index].style.backgroundColor = '';
         });
 
         const removedSquares = squares.splice(i, width);
